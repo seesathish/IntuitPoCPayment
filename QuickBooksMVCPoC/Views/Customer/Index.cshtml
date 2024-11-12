@@ -1,0 +1,25 @@
+﻿@model List<Intuit.Ipp.Data.Customer>
+
+@{
+    ViewBag.Title = "QuickBooks Customers";
+}
+<h2>Customer List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.DisplayName</td>
+                <td>@customer.PrimaryEmailAddr?.Address</td>
+                <td>@customer.PrimaryPhone?.FreeFormNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>

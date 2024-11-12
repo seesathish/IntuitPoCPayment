@@ -1,0 +1,25 @@
+﻿@model List<Intuit.Ipp.Data.Account>
+
+@{
+    ViewBag.Title = "QuickBooks Accounts";
+}
+<h2>Account List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Account Name</th>
+            <th>Account Type</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in Model)
+        {
+            <tr>
+                <td>@account.Name</td>
+                <td>@account.AccountType</td>
+                <td>@account.CurrentBalance</td>
+            </tr>
+        }
+    </tbody>
+</table>
